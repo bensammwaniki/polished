@@ -1,0 +1,88 @@
+{% extends 'agency/base.html' %}
+{% load static %}
+
+   {% block content %}
+        <section class="breadcrumbSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="pageTitle">
+                            <h2>Contact</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="pageBreadcrumb">
+                            <a href="/">Home</a>
+                            <span>&nbsp; / &nbsp;</span>
+                            <a href="#">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="commonSection">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="sectionTitle text-center">
+                            <h2>Contact Us</h2>
+                            <div class="titleBar"></div>
+                            <p>
+                                The helpless the powerless in a world of criminals who operate above the law texas tea here is the story 
+                                of<br/> a man named Brady who was busy with three boys they call him Flipper Flipper faster than lightning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 col-sm-7">
+                        <div class="conForms">
+                            <form method="post" action="#" id="contactForm">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text" name="con_fname" class="required" id="con_fname" value="" placeholder="First Name *"/>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text" name="con_lname" class="required" id="con_lname" value="" placeholder="Last Name *"/>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <input type="email" name="con_email" class="required" id="con_email" value="" placeholder="Email *"/>
+                                        <textarea name="con_message" class="required" id="con_message" placeholder="Comments"></textarea>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <button type="submit" id="con_submit">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-5">
+                        <div class="conInfosHolder">
+                            <div class="singleInfos wow fadeInUp" data-wow-duration="700ms" data-wow-delay="300ms">
+                                <i class="icon-Pointer"></i>
+                                <h4>Office Address</h4>
+                                <p>44 New Design Street Australia - Melbourne 55455</p>
+                            </div>
+                            <div class="singleInfos mtop34 wow fadeInUp" data-wow-duration="700ms" data-wow-delay="350ms">
+                                <a href="tel:0743491012"><i class="icon-Phone2"></i> </a>
+                                <h4>Phone Numbers</h4>
+                                <p>
+                                    (01) 987 654 32 10<br/>
+                                    (01) 234 567 89 10
+                                </p>
+                            </div>
+                            <div class="singleInfos mtop34 noPaddingBottom noBorderBottom wow fadeInUp" data-wow-duration="700ms" data-wow-delay="400ms">
+                                <i class="icon-Mail"></i>
+                                <h4>E-mail Address</h4>
+                                <p>
+                                    <a href="#">admin@myclean.com</a><br/>
+                                    <a href="#">info@myclean.com</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endblock %}
