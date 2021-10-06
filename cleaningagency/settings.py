@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'polished',
         'USER': 'moringa',
-    'PASSWORD':'Access',
+        'PASSWORD':'Access',
     }
 }
 
