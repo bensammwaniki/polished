@@ -2,9 +2,17 @@
 {% load static %}
 
    {% block content %}
+   {% for booking in bookings %}
 <div>
-    <h1>update the house help Available</h1>
+    <h1>{{ booking.name }}</h1>
+    <h1>{{ booking.email }}</h1>
+    <h1>{{ booking.phone_no }}</h1>
+    <h1>{{ booking.postal_address }}</h1>
+    <h1>{{ booking.city }}</h1>
+    <h1>{{ booking.servicies }}</h1>
+    <h1>{{ booking.comments }}</h1>
 </div>
 
+   {% endfor %}
 
    {% endblock %}
