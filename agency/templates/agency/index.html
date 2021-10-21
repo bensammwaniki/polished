@@ -473,42 +473,40 @@
                     </div>
                     <div class="col-lg-5 col-sm-12 noPadding">
                         <div class="servicesContact">
-                            <form action="#" method="post" id="servicesForm">
+                            <form action="{% url 'bookings.service' %}" method="post">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <h2 class="serconttitle">Service Booking</h2>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Name *" id="ser_name" name="ser_name" class="required">
+                                        <input type="text" placeholder="Name *" id="ser_name" name="name" class="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="email" placeholder="Email *" id="ser_email" name="ser_email" class="required">
+                                        <input type="email" placeholder="Email *" id="ser_email" name="email" class="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Phone Number *" id="ser_phone" name="ser_phone" class="required">
+                                        <input type="text" placeholder="Phone Number *" id="ser_phone" name="phone" class="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="Zip / Postal Code *" id="ser_post" name="ser_post" class="required">
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <input type="text" placeholder="Address *" id="ser_adds" name="ser_adds" class="required">
+                                        <input type="text" placeholder="Address *" id="ser_adds" name="address" class="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" placeholder="City *" id="ser_city" name="ser_city" class="required">
+                                        <input type="text" placeholder="City *" id="ser_city" name="city" class="required">
                                     </div>
                                     <div class="col-lg-6">
-                                        <select id="ser_option" class="required" name="ser_option">
+                                        <select id="ser_option" class="required" name="services">
                                             <option selected value="">choose a services</option>
-                                            <option value="Clean">Nanny</option>
-                                            <option value="mercedes">Housekeeper</option>
-                                            <option value="audi">Office cleaning</option>
+                                            <option value="Nanny">Nanny</option>
+                                            <option value="Housekeeping">Housekeeper</option>
+                                            <option value="Office cleaning">Office cleaning</option>
                                         </select> 
                                     </div>
                                     <div class="col-lg-12">
-                                        <textarea placeholder="Comments" id="ser_comment" name="ser_comment" class="required"></textarea>
+                                        <textarea placeholder="Comments" id="ser_comment" name="comment" class="required"></textarea>
                                     </div>
                                     <div class="col-lg-12">
-                                        <button type="submit" id="ser_submit">submit</button>
+                                        <button type="submit" id="submit">submit</button>
                                     </div>
                                 </div>
                             </form>
