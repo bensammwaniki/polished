@@ -70,6 +70,18 @@
 =========================================================================*/
 
 /**==================== Top Bar ======================**/
+.tbrow{
+    margin: 20px;
+
+}
+.tb{
+    border: 1px solid rgb(158, 158, 158);
+    border-radius: 5px;
+    padding: 20px 0px 20px 0px;
+}
+.tbh{
+    margin: 20px;
+}
 .headertopIn{
     border-bottom: 1px solid #ebebeb;
     padding:24px 0 28px;
