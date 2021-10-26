@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
 from agency.models import *
 
 # Create your views here.
@@ -33,6 +34,8 @@ def contact(request):
     return render(request,"agency/contact.html") 
 
 # retuns data to the admin page 
+
+@login_required(login_url='/accounts/login/')
 def admin(request):
     bookings = Bookings.objects.all().order_by('-date')
     

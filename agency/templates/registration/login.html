@@ -1,0 +1,95 @@
+{%extends "registration/base.html"%}
+{% load bootstrap5 %}
+{% block content %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 404</h1>
+      <h2>Oops...This is an Admin section!</h2>
+      <p>If you think you have arrived here by our mistake, please <a href="#">Go back</a></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h3 class="text-center">Sign In</h3>
+        </div>
+        <div class="panel-body">
+
+          <form  action="/accounts/login/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+
+            <div class="d-grid gap-2">
+              <input type="submit" class="btn btn-warning" value="Login">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-4">
+
+    </div>
+  </div>
+</div>
+
+
+<style>
+  html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+  line-height: 18px;
+  color: #707070;
+  background: url(../../../static/images/polished/bg.jpg) no-repeat 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  text-align: center; }
+
+.container {
+  margin-top: 8%; }
+
+a {
+  color: #3498db; }
+
+a:hover {
+  color: #3498db;
+  text-decoration: underline; }
+
+h1 {
+  color: #3498db;
+  font-size: 100px; }
+
+h2 {
+  font-size: 35px; }
+
+h3 {
+  margin-top: 50px !important; }
+
+p {
+  font-size: 18px; }
+
+
+footer {
+  font-size: 14px; }
+</style>
+
+{% endblock %}
