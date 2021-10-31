@@ -6,6 +6,7 @@
   <head>
 
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css">
    <link rel="stylesheet" type="text/css" href="{% static '/css/theme.css' %}"/>   
 
   </head>
@@ -27,11 +28,89 @@
                     <h3 class="mb-0 fw-bold text-white">Projects</h3>
                   </div>
                   <div>
-                    <a href="#" class="btn btn-white">Create New Project</a>
+                    <a href="#" class="btn btn-white"data-bs-toggle="modal" data-bs-target="#teamModal">Add a New Team Member</a>
                   </div>
                 </div>
               </div>
             </div>
+<!-- modal to add new team members -->
+            <div class="modal fade" id="teamModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add a New Team Member</h5>
+                  </div>
+                  <div class="modal-body">
+
+
+                    <form action="/upload/" enctype="multipart/form-data" method="POST">
+                      {% csrf_token %}
+                      <div class="mb-3">
+                        <label for="fname" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Enter your first name">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="sname" class="form-label">Second Name</label>
+                        <input type="text" class="form-control" id="sname" name="sname" placeholder="Enter your Second name">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="tname" class="form-label">Third Name</label>
+                        <input type="text" class="form-control" id="tname" name="tname" placeholder="Enter your Third name">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="iname" class="form-label">Id No</label>
+                        <input type="number" class="form-control" id="iname" name="id_no" placeholder="Enter your ID No">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="pname" class="form-label">Phone No</label>
+                        <input type="number" class="form-control" id="pname" name="phone_no" placeholder="Enter your Phone No">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="dobname" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" id="dobname" name="dobdate" placeholder="Date">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="hname" class="form-label">Home Town</label>
+                        <input type="text" class="form-control" id="hname" name="home_town" placeholder="Enter your home town">
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="sname" class="form-label">Occupation</label>
+                        <select class="form-select  mb-3" id="tname" name="occupation" aria-label=".form-select-lg example">
+                          <option selected>select Occupation</option>
+                          <option value="Nanny">Nanny</option>
+                          <option value="Housekeeper">Housekeeper</option>
+                          <option value="Cleaners">Cleaner</option>
+                        </select>
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="formFile" class="form-label">upload image</label>
+                        <input class="form-control" type="file" id="formFile" name="image">
+                      </div>
+                      <div>
+                        <img id="img" alt="uploaded image" class="avatar-lg avatar rounded-circle">
+                      </div>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit"  class="btn btn-primary">Add New User</button>
+                  </div>
+
+                </form>
+                </div>
+              </div>
+            </div>
+<!-- modal to add new team members -->
+
+
             <div class="col-xl-3 col-lg-6 col-md-12 col-12 mt-6">
               <!-- card -->
               <div class="card rounded-3">
@@ -201,7 +280,7 @@
                       <a class="text-muted text-primary-hover" href="#"
                         role="button" id="dropdownTask" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
-                        <i class="icon-xxs" data-feather="more-vertical"></i>
+                        <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                       </a>
                       <div class="dropdown-menu" aria-labelledby="dropdownTask">
                         <a class="dropdown-item" href="#">Action</a>
@@ -278,7 +357,7 @@
                               role="button" id="dropdownTeamOne"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
                             <div class="dropdown-menu"
                               aria-labelledby="dropdownTeamOne">
@@ -311,7 +390,7 @@
                               role="button" id="dropdownTeamTwo"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
                             <div class="dropdown-menu"
                               aria-labelledby="dropdownTeamTwo">
@@ -344,7 +423,7 @@
                               role="button" id="dropdownTeamThree"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
 
                             <div class="dropdown-menu"
@@ -380,7 +459,7 @@
                               role="button" id="dropdownTeamFour"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
 
                             <div class="dropdown-menu"
@@ -417,7 +496,7 @@
                               role="button" id="dropdownTeamFive"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
 
                             <div class="dropdown-menu"
@@ -451,7 +530,7 @@
                               role="button" id="dropdownTeamSix"
                               data-bs-toggle="dropdown" aria-haspopup="true"
                               aria-expanded="false">
-                              <i class="icon-xxs" data-feather="more-vertical"></i>
+                              <i class="bi bi-three-dots-vertical" data-feather="more-vertical"></i>
                             </a>
 
                             <div class="dropdown-menu"
@@ -474,6 +553,15 @@
       </div>
     </div>
     <!-- Scripts -->
+
+<script>
+      formFile.onchange = evt => {
+         const [file] = formFile.files
+         if (file) {
+           img.src = URL.createObjectURL(file)
+         }
+       }
+ </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   </body>
 

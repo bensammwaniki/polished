@@ -7,5 +7,6 @@ urlpatterns = [
     path("contact/", views.contact),
     path("administ/", views.admin),
     path('bookings/', views.bookings, name='bookings.service'),
+    path("upload/", views.upload, name="upload")
     
 ]
